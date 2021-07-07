@@ -87,3 +87,4 @@ export const saveDeployResult = (fileName: string) => async (result: unknown) =>
 
 export { ask } from './ask'
 export { toTrustToken } from './toTrustToken'
+export { fromTrustToken } from './fromTrustToken'
