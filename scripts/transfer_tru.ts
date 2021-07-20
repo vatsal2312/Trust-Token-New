@@ -8,7 +8,6 @@
  * 2. Transfer the total amount of TRU to a new account with 0 TRU balance
  *
  * PRIVATE_KEY={private_key} ts-node scripts/transfer_tru.ts "{network}" {path_to_csv}
- *
  * Example:
  * PRIVATE_KEY="0x123.....123" ts-node scripts/transfer_tru.ts "mainnet" ~/Downloads/tru.csv
  */
