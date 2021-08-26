@@ -321,7 +321,7 @@ contract TrueCreditAgency is UpgradeableClaimable, ITrueCreditAgency {
         require(!_hasOverdueInterest(pool, msg.sender), "TrueCreditAgency: Sender has overdue interest in this pool");
         (uint8 oldScore, uint8 newScore) = _updateCreditScore(pool, msg.sender);
         require(newScore >= minCreditScore, "TrueCreditAgency: Borrower has credit score below minimum");
-        require(amount <= borrowLimit(pool, msg.sender), "TrueCreditAgency: Borrow amount cannot exceed borrow limit");
+        require(pool.oracle().tokenToUsd(amount) <= borrowLimit(pool, msg.sender), "TrueCreditAgency: Borrow amount cannot exceed borrow limit");
         uint256 currentDebt = borrowed[pool][msg.sender];
 
         if (currentDebt == 0) {
